@@ -53,7 +53,7 @@ rss:
 
 - **menu** - Main navigation menu
 - **excerpt_link** - "Read More" link text at the bottom of excerpted articles
-- **archive_yearly** - Enable archives grouped by year
+- **archive_yearly** - Enable archives grouped by year, only for nonpaged (set the pagination config: `archive: 1`)
 - **widgets** - Widgets displaying in sidebar
 - **blogrolls** - Blogrolls displaying in `blogroll` widget
 - **fancybox** - Enable [Fancybox]
