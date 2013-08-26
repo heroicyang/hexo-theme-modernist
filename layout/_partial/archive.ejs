@@ -8,7 +8,7 @@ if (page.archive){
   } else {
     title = __('archive_a');
 
-    if (theme.archive_yearly) {
+    if (pagination == 1 && theme.archive_yearly) {
       var page_grouped = {}, years = [];
       page.each(function (item) {
         var year = item.date.format('YYYY');
