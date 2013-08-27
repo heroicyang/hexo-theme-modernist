@@ -1,17 +1,15 @@
 figure.highlight
-  position relative
-  padding 10px 20px
-  background #3A3C42
   margin 0 -30px 16px
-
+  padding 0 30px
+  background #3A3C42
   @media screen and (max-width:580px)
     margin 0 -20px 16px
-    padding 10px
+    padding 10px 20px
 
   pre
-    border none
-    padding 0 10px
-    margin 0
+    margin 0 -30px 0px
+    @media screen and (max-width:580px)
+      margin 0 -20px 0px
 
   table
     margin 0
@@ -22,10 +20,15 @@ figure.highlight
     border-bottom 0
 
   .gutter
+    width 40px
+    @media screen and (max-width:580px)
+      display none
     pre
-      padding 0 0 0 10px
+      position relative
+      padding 10px 0 10px 30px
       border-right 1px solid #fff
       height 100%
+      width 30px
 
 pre
   // Theme: Solarized - Light
