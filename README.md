@@ -1,8 +1,8 @@
 # Modernist
 
-**Attention: Modernist has been updated to Hexo version 2.0.x. If you're still using version 1.x, please use the [1.x](https://github.com/heroicyang/hexo-theme-modernist/tree/1.x) branch.**
+> **Attention: Modernist has been updated to Hexo version 2.0.x. If you're still using version 1.x, please use the [1.x](https://github.com/heroicyang/hexo-theme-modernist/tree/1.x) branch.**
 
-Theme for [Hexo]. Based on Hexo default light theme, and [modernist theme] for Github Pages.  
+> Theme for [Hexo]. Based on Hexo default light theme, and [modernist theme] for Github Pages.  
 
 [Demo the Theme]
 
