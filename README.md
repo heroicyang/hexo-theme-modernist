@@ -1,5 +1,7 @@
 # Modernist
 
+**Attention: Modernist has been updated to Hexo version 2.0.x. If you're still using version 1.x, please use the [1.x](https://github.com/heroicyang/hexo-theme-modernist/tree/1.x) branch.**
+
 Theme for [Hexo]. Based on Hexo default light theme, and [modernist theme] for Github Pages.  
 
 [Demo the Theme]
@@ -11,6 +13,11 @@ Execute the following command and modify `theme` in `_config.yml` to `modernist`
 ```
 git clone git://github.com/heroicyang/hexo-theme-modernist.git themes/modernist
 ```
+For Hexo 1.x:
+
+```
+git clone -b 1.x git://github.com/heroicyang/hexo-theme-modernist.git themes/modernist
+```
 
 ## Update
 
@@ -19,6 +26,12 @@ Execute the following command to update Modernist.
 ```
 cd themes/modernist
 git pull
+```
+For Hexo 1.x:
+
+```
+cd themes/modernist
+git pull origin 1.x
 ```
 
 ## Config
