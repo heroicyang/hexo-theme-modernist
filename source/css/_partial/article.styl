@@ -3,7 +3,6 @@ icon-size = 24px
 
 article
   padding 15px 30px
-  font-size 15px
   position relative
 
   &.page
@@ -117,7 +116,7 @@ article
       line-height 1
 
     .title
-      font-size 24px
+      font-size 1.5em
       font-weight normal
       line-height 1.2
       margin 0
@@ -131,6 +130,7 @@ article
           color color-link
 
   .entry
+    font-size 0.95em
     text-align justify
     line-height 1.6
 
@@ -143,11 +143,15 @@ article
     p, ul, ol, table, dl
       margin 0 0 20px
 
+    p
+      white-space pre-wrap
+      word-wrap break-word
+
     h1, h2, h3
       line-height 1.1
 
     h1
-      font-size 28px
+      font-size 1.75em
 
     h2
       color #393939
@@ -202,7 +206,7 @@ article
       word-wrap break-word
 
     code
-      font-size 13px
+      font-size 0.8em
 
     pre
       padding 10px 30px
@@ -238,7 +242,7 @@ article
       color #222
 
     small
-      font-size 11px
+      font-size 0.7em
 
     hr
       border 0
@@ -250,6 +254,7 @@ article
       text-decoration line-through
 
   footer
+    font-size 0.875em
     border-top 1px solid #aaa
     padding 10px 0 0 0
     margin-top 10px
@@ -274,21 +279,13 @@ article
           content '\f075'
 
     .categories, .tags
-      position relative
-      padding-left 25px
       margin 5px 0
       &:before
-        position absolute
         font 1.1em font-icon
+        margin-right 5px
 
-    .categories
-      &:before
-        content '\f07b'
-        top 4px
-        left 1px
+    .categories:before
+      content '\f07b'
 
-    .tags
-      &:before
-        content '\f02b'
-        top 5px
-        left 2px
+    .tags:before
+      content '\f02b'

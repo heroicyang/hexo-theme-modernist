@@ -1,12 +1,13 @@
-.archive-title
+.archives-title
   font-weight normal
+  font-size 1.4em
   margin-bottom 10px
   padding 0 30px
   text-shadow 0 0 1px #fff
   &:before
     font-family font-icon
     content '\f073'
-    padding-right 15px
+    margin-right 10px
 
   &.tag
     &:before
@@ -16,23 +17,18 @@
     &:before
       content '\f07b'
 
-.archive-year
-  font-size 2.4em
-  font-family Candara,arial
-  font-style italic
-  color #069
-  text-shadow rgba(255,255,255,0.9) 0 1px 0
-  padding 0 30px
-  margin 0 0 10px 0
-  @media screen and (max-width:580px)
-    padding 0 20px
+.archives-wrapper
+  &:last-child
+    padding-bottom 10px
 
-  a:after
-    content '\f08e'
-    font 12px FontAwesome
-    padding-left 10px
-    vertical-align super
+  .archives-year > a
+    color #555
 
-  .sep
-    border-bottom 1px solid #aaa
-    box-shadow rgba(255,255,255,0.3) 0 1px 0
+  .archives
+    > article
+      padding-top 0
+      padding-bottom 0
+
+      header
+        .title
+          font-size 1.1em

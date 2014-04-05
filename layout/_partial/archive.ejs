@@ -1,52 +1,51 @@
 <%
-var title = '';
-if (page.category) title = page.category;
-if (page.tag) title = page.tag;
-if (page.archive){
-  if (page.year) {
-    title = page.year + (page.month ? '/' + page.month : '');
-  } else {
-    title = __('archive_a');
+var title = '', classes = 'archives-title';
 
-    if (pagination == 1 && theme.archive_yearly) {
-      var page_grouped = {}, years = [];
-      page.posts.each(function (item) {
-        var year = item.date.format('YYYY');
-        if (!page_grouped[year]) {
-          page_grouped[year] = [];
-          years.push(year);
-        }
-        page_grouped[year].push(item);
-      });
-      years.sort(function (year) { return -year; });
-    }
+if (is_category()) {
+  title = page.category;
+  classes += ' category';
+} else if (is_tag()) {
+  title = page.tag;
+  classes += ' tag';
+} else if (is_archive()) {
+  if (is_year()) {
+    title = page.year;
+  } else if (is_month()) {
+    title = page.year + page.month;
   }
 }
 %>
-<h2 class="archive-title<% if (page.tag){ %> tag<% } else if (page.category){ %> category<% } %>"><%= title %></h2>
+
+<% if (title) { %>
+<h2 class="<%= classes %>"><span><%= title %></span></h2>
+<% } %>
 
 <% if (pagination == 2){ %>
-  <% page.posts.each(function(item){ %>
-    <%- partial('article', {item: item, index: true}) %>
+  <% page.posts.each(function(post){ %>
+    <%- partial('article', {post: post, index: true}) %>
   <% }); %>
 
   <%- partial('pagination') %>
 <% } else { %>
-  <div class="archive">
-    <% if (page.year || !theme.archive_yearly) { %>
-      <% page.posts.each(function(item){ %>
-        <%- partial('archive_title', {item: item}) %>
-      <% }); %>
-    <% } else { %>
-      <% for (var i = 0, len = years.length; i < len; i++) { %>
-        <div class="archive-year">
-          <a href="./<%= years[i] %>/"><%= years[i] %></a>
-          <div class="sep"></div>
-        </div>
-        <% page_grouped[years[i]].forEach(function(item){ %>
-          <%- partial('archive_title', {item: item}) %>
-        <% }); %>
+  <% var last; %>
+  <% page.posts.each(function(post, i){ %>
+    <% var year = post.date.year(); %>
+    <% if (last != year){ %>
+      <% if (last != null){ %>
+        </div></section>
       <% } %>
+      <% last = year; %>
+      <section class="archives-wrapper">
+        <% if (!title) { %>
+        <h2 class="archives-title archives-year">
+          <a href="<%- config.root %>archives/<%= year %>"><%= year %></a>
+        </h2>
+        <% } %>
+        <div class="archives">
     <% } %>
-  </div>
+    <%- partial('archive-post', {post: post}) %>
+  <% }) %>
+  <% if (page.posts.length){ %>
+    </div></section>
+  <% } %>
 <% } %>

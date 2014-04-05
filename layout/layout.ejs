@@ -1,14 +1,10 @@
 <%- partial('_partial/head') %>
-
 <body>
   <div class="wrapper">
-    <header id="header"><%- partial('_partial/header') %></header>
+    <%- partial('_partial/header') %>
     <div class="content"><%- body %></div>
   </div>
-  <div class="widget-wrapper">
-    <%- partial('_partial/sidebar') %>
-  </div>
   <footer id="footer"><%- partial('_partial/footer') %></footer>
-  <%- partial('_partial/after_footer') %>
+  <%- partial('_partial/after-footer') %>
 </body>
 </html>

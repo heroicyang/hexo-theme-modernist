@@ -1,23 +1,12 @@
 menu:
   Home: /
   Archives: /archives
+rss: /atom.xml
 
-excerpt_link: Read More
-archive_yearly: false
-
-widgets:
-  - category
-  - tag
-  - tagcloud
-  - recent_posts
-  - blogroll
-
-blogrolls:
-  - Heroic Yang's Blog: http://heroicyang.com/
-
+archive_date_format: MMM DD
 fancybox: true
 
-duoshuo_shortname: 
+duoshuo_shortname:
 
 google_analytics:
-rss:
+favicon: /favicon.ico

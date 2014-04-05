@@ -1,11 +1,9 @@
-<% if (item.categories && item.categories.length > 0){ %>
-  <%
-  var cats = [];
-  item.categories.forEach(function(cat){
-    cats.push('<a href="' + config.root + cat.path + '">' + cat.name + '</a>');
-  });
-  %>
+<% if (post.categories && post.categories.length > 0){ %>
   <div class="categories">
-    <%- cats.join(', ') %>
+    <%- list_categories(post.categories, {
+      show_count: false,
+      class: 'categories',
+      style: 'none'
+    }) %>
   </div>
 <% } %>
