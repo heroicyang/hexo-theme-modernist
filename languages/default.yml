@@ -1,12 +1,10 @@
-categories: Categories
-search: Search
-tags: Tags
-tagcloud: Tag Cloud
+archive_title: Archives
+category_title: Category
+tag_title: Tag
+rss_title: RSS
+excerpt_title: Read More
+
+comment: Comments
+
 prev: Prev
 next: Next
-comment: Comments
-archive_a: Archives
-archive_b: Archives: %s
-page: Page %d
-recent_posts: Recent Posts
-blogroll: Links

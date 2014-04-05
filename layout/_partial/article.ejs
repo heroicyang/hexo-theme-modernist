@@ -1,31 +1,31 @@
-<article class="<%= item.layout %>">
+<article class="<%= post.layout %>">
   <header>
-    <% if (item.layout != 'page'){ %>
+    <% if (post.layout != 'page'){ %>
       <div class="icon"></div>
-      <time datetime="<%= item.date.toDate().toISOString() %>"><a href="<%- config.root %><%- item.path %>"><%= item.date.format(config.date_format) %></a></time>
+      <%- partial('post/date', { date_format: config.date_format }) %>
     <% } %>
     <%- partial('post/title') %>
   </header>
-  <% if (item.photos && item.photos.length > 0){ %>
+  <% if (post.photos && post.photos.length > 0){ %>
     <%- partial('post/gallery') %>
   <% } %>
   <div class="entry">
-    <% if (item.excerpt && index){ %>
-      <%- item.excerpt %>
+    <% if (post.excerpt && index){ %>
+      <%- post.excerpt %>
     <% } else { %>
-      <%- item.content %>
+      <%- post.content %>
     <% } %>
   </div>
   <footer<% if (index) { %> class="end-sep"<% } %>>
     <% if (index){ %>
-      <% if (item.excerpt){ %>
+      <% if (post.excerpt){ %>
         <div class="alignleft">
-          <a href="<%- config.root %><%- item.path %>#more" class="more-link"><%= theme.excerpt_link %></a>
+          <a href="<%- config.root %><%- post.path %>#more" class="more-link"><%= __('excerpt_title') %></a>
         </div>
       <% } %>
-      <% if (item.comment && config.disqus_shortname){ %>
+      <% if (post.comment && config.disqus_shortname){ %>
       <div class="alignright">
-        <a href="<%- item.permalink %>#disqus_thread" class="comment-link">Comments</a>
+        <a href="<%- post.permalink %>#disqus_thread" class="comment-link">Comments</a>
       </div>
       <% } %>
     <% } else { %>

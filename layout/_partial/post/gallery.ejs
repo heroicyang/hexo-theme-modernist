@@ -1,11 +1,11 @@
 <div class="gallery">
   <div class="photoset">
-    <% if (item.photos.length){ %>
-      <% item.photos.forEach(function(photo){ %>
+    <% if (post.photos.length){ %>
+      <% post.photos.forEach(function(photo){ %>
         <img src="<%- photo %>">
       <% }); %>
     <% } else { %>
-      <img src="<%- item.photos %>">
+      <img src="<%- post.photos %>">
     <% } %>
   </div>
   <div class="control">
