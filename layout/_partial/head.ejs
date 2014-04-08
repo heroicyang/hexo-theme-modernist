@@ -19,24 +19,28 @@
   } else if (is_tag()) {
     title = __('tag_title') + ': ' + page.tag;
   }
+
+  var description = page.description || '';
+  if (!description) {
+    if (page.excerpt) {
+      description = strip_html(page.excerpt);
+    } else if (page.content) {
+      description = strip_html(page.content);
+    }
+  }
+  description = description.substring(0, 200).replace(/^\s+|\s+$/g, '');
   %>
   <title><% if (title) { %><%= title %> | <% } %><%= config.title %></title>
-  <% if (config.author){ %><meta name="author" content="<%= config.author %>"><% } %>
-  <% if (page.description){ %>
-  <meta name="description" content="<%= page.description %>">
-  <% } else if (page.excerpt){ %>
-  <meta name="description" content="<%= strip_html(page.excerpt).replace(/^\s*/, '').replace(/\s*$/, '') %>">
-  <% } else if (page.content){ %>
-  <meta name="description" content="<%= strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150) %>">
-  <% } else if (config.description){ %>
-  <meta name="description" content="<%= config.description %>">
-  <% } %>
-  <% if (page.keywords){ %><meta name="keywords" content="<%= page.keywords %>"><% } %>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <% if (page.title){ %><meta property="og:title" content="<%= page.title %>"/><% } %>
-  <meta property="og:site_name" content="<%= config.title %>"/>
+  <% if (config.author){ %>
+    <meta name="author" content="<%= config.author %>">
+  <% } %>
+  <% if (description){ %>
+    <meta name="description" content="<%= description %>">
+  <% } %>
+  <%- open_graph() %>
   <% if (theme.rss){ %>
-  <link rel="alternate" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
+    <link rel="alternate" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
   <% } %>
   <% if (theme.favicon){ %>
     <link rel="icon" type="image/x-icon" href="<%- theme.favicon %>">
