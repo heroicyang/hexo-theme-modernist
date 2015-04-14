@@ -53,6 +53,6 @@ favicon: /favicon.ico
 
 [Hexo]: http://zespia.tw/hexo/
 [modernist theme]: https://github.com/orderedlist/modernist
-[Demo the Theme]: http://heroicyang.com/
+[Demo the Theme]: http://modernist.heroicyang.com/
 [Duoshuo]: http://duoshuo.com
 [Fancybox]: http://fancyapps.com/fancybox/
